@@ -219,3 +219,40 @@ body {
     background-position: 1000px 1000px;
   }
 }
+
+
+
+
+#appGallery {
+  display: flex;
+  flex-direction: column;
+  max-width: 45em;
+  margin: auto;
+  align-items: center;
+  gap: 1em;
+  justify-content: space-evenly;
+  align-content: space-around;
+  background-color: rgba(0, 0, 0, 0.55);
+  border-radius: 40px;
+}
+
+.galleryTitle {
+  margin: 1.3em 0 0.3em 0;
+  font-size: 1.4em;
+}
+
+.galleryContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.imageContainer {
+  max-width: 100%;
+}
+
+.imageContainer img {
+  max-width: 100%;
+}
