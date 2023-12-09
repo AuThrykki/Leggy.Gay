@@ -254,5 +254,6 @@ body {
 }
 
 .imageContainer img {
+  max-height: 15em;
   max-width: 100%;
 }
