@@ -9,11 +9,11 @@ c.width = window.innerWidth;
 //chinese characters - taken from the unicode charset
 // var matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
 // var matrix = "                                               あいうえおかきくけこまみむめもなにぬねのたちつてとさしすせそらりるれろはひふへほアイウエオかきくけこマミムメモナニヌネノタチツテトサシスセソラリルレロハヒフヘホ良犬狗狼好";
-var matrix = "良犬狗狼鳥狸麒麟龍好龍忠義言語西洋真実神様願任友達何処故新世界勝絶対あいうえおかきくけこまみむめもなにぬねのたちつてとさしすせそらりるれろはひふへほアイウエオかきくけこマミムメモナニヌネノタチツテトサシスセソラリルレロハヒフヘホ";
+var matrix = `良犬狗狼鳥狸麒麟龍好龍忠義言語西洋真実神様願任友達何処故新世界勝絶対あいうえおかきくけこまみむめもなにぬねのたちつてとさしすせそらりるれろはひふへほアイウエオかきくけこマミムメモナニヌネノタチツテトサシスセソラリルレロハヒフヘホ                                       `;
 //converting the string into an array of single characters
 matrix = matrix.split("");
 
-var font_size = 70;
+var font_size = 10;
 var columns = c.width/font_size; //number of columns for the rain
 //an array of drops - one per column
 var drops = [];
@@ -22,12 +22,14 @@ var drops = [];
 for(var x = 0; x < columns; x++)
     drops[x] = 1; 
 
+var totalDrawCount = 0;
+
 //drawing the characters
 function draw()
 {
     //Black BG for the canvas
     //translucent BG to show trail
-    ctx.fillStyle = "rgba(0, 0, 0, 0.2)";
+    ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
     ctx.fillRect(0, 0, c.width, c.height);
 
     ctx.fillStyle = "rgb(89, 156, 152)";//green text
@@ -47,6 +49,7 @@ function draw()
         //incrementing Y coordinate
         drops[i]++;
     }
+    totalDrawCount++;
 }
 
-setInterval(draw, 100);
+setInterval(draw, 70);

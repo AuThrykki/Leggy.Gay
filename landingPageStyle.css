@@ -157,18 +157,17 @@ a {
   gap: 4px;
 }
 
-div .factoid:nth-child(3n + 1),
-#linksDiv > a:nth-child(3n + 1) > div {
+div .factoid:nth-child(3n + 1){
   color: var(--teal2);
 }
 
-div .factoid:nth-child(3n + 2),
-#linksDiv > a:nth-child(3n + 2) > div {
+div .factoid:nth-child(3n + 2){
   color: var(--teal3);
 }
 
 .factoid {
   display: inline;
+  color: var(--teal1);
 }
 
 .mono {
