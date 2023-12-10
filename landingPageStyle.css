@@ -17,10 +17,15 @@ html {
 body {
   background-color: var(--black);
   height: 99vh;
-  font-family: "Courier New", Courier, monospace;
-  text-align: center;
-  text-shadow: var(--teal1) -1px -1px 12px, var(--teal1) 1px 1px 1px,
-    var(--teal1) 1px 1px 1px;
+}
+
+canvas {
+  background: black;
+  width: 98%;
+  height: 98%;
+  display: block;
+  position: absolute;
+  z-index: -1;
 }
 
 @media screen and (min-height: 300px) {
@@ -166,22 +171,30 @@ div .factoid:nth-child(3n + 2),
   display: inline;
 }
 
+.mono {
+  font-family: monospace;
+}
+
 .bigFont {
   font-size: 1.4em;
 }
 
-div {
+.glow {
   transition: color 2s, text-shadow 2s;
+  font-family: "Courier New", Courier, monospace;
+  text-align: center;
+  text-shadow: var(--teal1) -1px -1px 12px, var(--teal1) 1px 1px 1px,
+    var(--teal1) 1px 1px 1px;
 }
 
-div:hover {
+.glow:hover {
   color: white !important;
   transition: color 0.2s, text-shadow 0.2s;
   text-shadow: var(--teal) -1px -1px 12px, var(--teal) 1px 1px 1px,
     var(--teal) 1px 1px 1px;
 }
 
-body {
+/* body {
   background: repeating-linear-gradient(
     25deg,
     var(--bgvar2),
@@ -208,8 +221,8 @@ body {
     var(--bgvar2)
   );
   background-size: 20px 40px;
-  animation: move-it 20s linear infinite;
-}
+  animation: move-it 20s linear infinite; */
+/* }
 
 @keyframes move-it {
   0% {
@@ -218,7 +231,7 @@ body {
   100% {
     background-position: 1000px 1000px;
   }
-}
+} */
 
 
 
