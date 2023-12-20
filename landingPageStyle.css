@@ -27,6 +27,11 @@ canvas {
   position: absolute;
   z-index: -1;
 }
+@media screen and (min-height: 1) {
+  body {
+    font-size: 0.4em;
+  }
+}
 
 @media screen and (min-height: 300px) {
   body {
