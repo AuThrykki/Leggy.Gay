@@ -1,14 +1,11 @@
 html {
   --black: black;
   --white: rgb(255, 255, 255);
-  --teal1: rgb(225, 86, 58);
-  --teal2: rgb(237, 127, 54);
-  --teal3: rgb(168, 47, 3);
-  --darkteal: rgb(89, 156, 152);
   --teal: rgb(89, 239, 229);
-  --bgvar1: rgb(0, 217, 255);
-  --bgvar2: rgb(0, 0, 0);
-
+  --MainC1: rgb(225, 86, 58);
+  --Pink: rgb(251, 34, 111);
+  --factoid: rgb(185, 185, 185);
+  --darkteal: rgb(89, 156, 152);
   height: 100vh;
   font-size: 0.8em;
   font-weight: bolder;
@@ -17,15 +14,22 @@ html {
 body {
   background-color: var(--black);
   height: 99vh;
+  font-family: 'Monaco', monospace;
 }
 
 canvas {
   background: black;
-  width: 98%;
+  width: 60%;
   height: 98%;
   display: block;
   position: absolute;
   z-index: -1;
+
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
 }
 @media screen and (min-height: 1) {
   body {
@@ -93,15 +97,10 @@ canvas {
   }
 }
 
-div {
-  /* border: 1px solid white; */
-  color: var(--teal1);
-}
-
 #appBox {
   display: flex;
   flex-direction: column;
-  max-width: 45em;
+  max-width: 23em;
   margin: auto;
   align-items: center;
   gap: 1em;
@@ -117,7 +116,7 @@ div {
   max-width: 20em;
   width: 100%;
   border-radius: 34%;
-  border: 3px var(--teal1) dashed;
+  border: 3px var(--MainC1) dashed;
   border-style: outset;
 }
 
@@ -138,6 +137,8 @@ a {
   max-height: 5em;
   max-width: 5em;
 
+  color: var(--MainC1);
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -150,7 +151,6 @@ a {
 }
 
 .titleDiv {
-  font-family: monospace;
   font-size: 1.8em;
 }
 
@@ -162,33 +162,22 @@ a {
   gap: 4px;
 }
 
-div .factoid:nth-child(3n + 1){
-  color: var(--teal2);
-}
-
-div .factoid:nth-child(3n + 2){
-  color: var(--teal3);
-}
-
 .factoid {
+  text-align: center;
   display: inline;
-  color: var(--teal1);
-}
-
-.mono {
-  font-family: monospace;
+  color: var(--factoid);
 }
 
 .bigFont {
+  color: var(--MainC1);
   font-size: 1.4em;
 }
 
 .glow {
   transition: color 2s, text-shadow 2s;
-  font-family: "Courier New", Courier, monospace;
   text-align: center;
-  text-shadow: var(--teal1) -1px -1px 12px, var(--teal1) 1px 1px 1px,
-    var(--teal1) 1px 1px 1px;
+  text-shadow: var(--Pink) -1px -1px 12px, var(--Pink) 1px 1px 1px,
+    var(--Pink) 1px 1px 1px;
 }
 
 .glow:hover {

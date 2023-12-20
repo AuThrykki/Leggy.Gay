@@ -4,16 +4,13 @@ var ctx = c.getContext("2d");
 
 //making the canvas full screen
 c.height = window.innerHeight;
-c.width = window.innerWidth;
+c.width = window.innerWidth*0.6;
 
-//chinese characters - taken from the unicode charset
-// var matrix = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789@#$%^&*()*&^%+-/~{[|`]}";
-// var matrix = "                                               あいうえおかきくけこまみむめもなにぬねのたちつてとさしすせそらりるれろはひふへほアイウエオかきくけこマミムメモナニヌネノタチツテトサシスセソラリルレロハヒフヘホ良犬狗狼好";
+//chinese characters - taken from the unicode charset//converting the string into an array of single characters
 var matrix = `良犬狗狼鳥狸麒麟龍好龍忠義言語西洋真実神様願任友達何処故新世界勝絶対あいうえおかきくけこまみむめもなにぬねのたちつてとさしすせそらりるれろはひふへほアイウエオかきくけこマミムメモナニヌネノタチツテトサシスセソラリルレロハヒフヘホ                                       `;
-//converting the string into an array of single characters
 matrix = matrix.split("");
 
-var font_size = 10;
+var font_size = 14;
 var columns = c.width/font_size; //number of columns for the rain
 //an array of drops - one per column
 var drops = [];
@@ -42,7 +39,7 @@ function draw()
         }
 
         var random = Math.random();
-        if (random <= 0.002) {
+        if (random <= 0.00) {
             ctx.fillStyle = "rgba(238, 63, 1)"
         }
      
@@ -53,11 +50,11 @@ function draw()
 
         //sending the drop back to the top randomly after it has crossed the screen
         //adding a randomness to the reset to make the drops scattered on the Y axis
-        if(drops[i]*font_size > c.height && Math.random() > 0.975)
+        if(drops[i]*font_size > (c.height) && Math.random() > 0.975)
             drops[i] = 0;
         //incrementing Y coordinate
         drops[i]++;
     }
 }
 
-setInterval(draw, 30);
+setInterval(draw, 40);
