@@ -22,8 +22,6 @@ var drops = [];
 for(var x = 0; x < columns; x++)
     drops[x] = 1; 
 
-var totalDrawCount = 0;
-
 //drawing the characters
 function draw()
 {
@@ -32,11 +30,22 @@ function draw()
     ctx.fillStyle = "rgba(0, 0, 0, 0.1)";
     ctx.fillRect(0, 0, c.width, c.height);
 
+
     ctx.fillStyle = "rgb(89, 156, 152)";//green text
     ctx.font = font_size + "px arial";
     //looping over drops
     for(var i = 0; i < drops.length; i++)
     {
+        var random = Math.random();
+        if (random <= 0.002) {
+            ctx.fillStyle = "rgba(253, 34, 118)"
+        }
+
+        var random = Math.random();
+        if (random <= 0.002) {
+            ctx.fillStyle = "rgba(238, 63, 1)"
+        }
+     
         //a random chinese character to print
         var text = matrix[Math.floor(Math.random()*matrix.length)];
         //x = i*font_size, y = value of drops[i]*font_size
@@ -49,7 +58,6 @@ function draw()
         //incrementing Y coordinate
         drops[i]++;
     }
-    totalDrawCount++;
 }
 
-setInterval(draw, 70);
+setInterval(draw, 30);
