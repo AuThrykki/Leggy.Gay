@@ -108,8 +108,8 @@ div {
 }
 
 #headerPicture {
-  max-height: 25em;
-  max-width: 25em;
+  max-height: 20em;
+  max-width: 20em;
   width: 100%;
   border-radius: 34%;
   border: 3px var(--teal1) dashed;
