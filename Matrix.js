@@ -10,7 +10,7 @@ c.width = window.innerWidth*0.6;
 var matrix = `良犬狗狼鳥狸麒麟龍好龍忠義言語西洋真実神様願任友達何処故新世界勝絶対あいうえおかきくけこまみむめもなにぬねのたちつてとさしすせそらりるれろはひふへほアイウエオかきくけこマミムメモナニヌネノタチツテトサシスセソラリルレロハヒフヘホ                                       `;
 matrix = matrix.split("");
 
-var font_size = 14;
+var font_size = 19;
 var columns = c.width/font_size; //number of columns for the rain
 //an array of drops - one per column
 var drops = [];

@@ -14,21 +14,24 @@ html {
 body {
   background-color: var(--black);
   height: 99vh;
-  font-family: 'Monaco', monospace;
+  font-family: "Monaco", monospace;
 }
 
 canvas {
   background: black;
   width: 60%;
-  height: 98%;
+  height: 90%;
   display: block;
   position: absolute;
   z-index: -1;
+
+  transform: rotate(-10deg);
 
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
+  top: -10px;
   text-align: center;
 }
 @media screen and (min-height: 1) {
@@ -104,11 +107,16 @@ canvas {
   margin: auto;
   align-items: center;
   gap: 1em;
-  justify-content: space-evenly;
+  /* justify-content: space-evenly; */
   align-content: space-around;
   height: 98vh;
-  background-color: rgba(0, 12, 12, 0.55);
+
+  background-color: rgba(0, 12, 12, 0.1);
   border-radius: 40px;
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  backdrop-filter: blur(1.3px);
+  -webkit-backdrop-filter: blur(8.3px);
+  border: 1px solid rgba(0, 0, 0, 0.81);
 }
 
 #headerPicture {
@@ -124,7 +132,6 @@ canvas {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 1em;
   width: 85%;
   justify-content: space-around;
 }
@@ -133,11 +140,18 @@ a {
   text-decoration: none;
 }
 
+#linksDiv > a {
+  flex: 0 0 31%;
+}
+
 .link {
+  margin-left: auto;  
+  margin-right: auto;  
+
   max-height: 5em;
   max-width: 5em;
 
-  color: var(--MainC1);
+  color: var(--white);
 
   display: flex;
   flex-direction: column;
@@ -151,26 +165,51 @@ a {
 }
 
 .titleDiv {
-  font-size: 1.8em;
+  height: 2em;
+  font-size: 2.4em;
+  position: relative;
+  color: var(--MainC1);
+  display: flex;
+  align-items: inherit;
+}
+
+.NameStack {
+  position: relative;
+}
+
+.titleName {
+  display: inline;
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 2; /* z-index determines the stack order (higher values on top) */
+}
+
+.titleNamePhonetic {
+  display: inline;
+  position: absolute; /* Position this element absolutely within the container */
+  top: -0.7em;
+  left: -1.8em;
+  width: 10em;
+  font-size: 0.5em;
+  z-index: 1; /* This div will be on top because it has a higher z-index */
+  opacity: 0.5; /* Optional: make the top div slightly transparent */
 }
 
 .mainText {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
-  gap: 4px;
+  /* align-items: center; */
+  gap: 5px;
+  padding-top: 2em;
 }
 
 .factoid {
-  text-align: center;
+  /* text-align: center; */
   display: inline;
   color: var(--factoid);
-}
-
-.bigFont {
-  color: var(--MainC1);
-  font-size: 1.4em;
 }
 
 .glow {
@@ -186,7 +225,6 @@ a {
   text-shadow: var(--teal) -1px -1px 12px, var(--teal) 1px 1px 1px,
     var(--teal) 1px 1px 1px;
 }
-
 
 #appGallery {
   display: flex;
@@ -217,10 +255,12 @@ a {
 }
 
 .imageContainer {
-  max-width: 100%;
+  /* max-width: 30%; */
+  flex: 0 0 24%;
 }
 
-.imageContainer img {
+.imageContainer img,
+.imageContainer video {
   max-height: 15em;
   max-width: 100%;
 }
