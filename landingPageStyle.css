@@ -19,8 +19,8 @@ body {
 
 canvas {
   background: black;
-  width: 150%;
-  height: 150%;
+  width: 300%;
+  height: 300%;
   display: block;
   position: fixed;
   z-index: -1;
@@ -29,9 +29,8 @@ canvas {
 
   margin-left: auto;
   margin-right: auto;
-  left: 0;
-  right: 0;
-  top: -60%;
+  left: -100%;
+  top: -100%;
   text-align: center;
 }
 @media screen and (min-height: 1) {
