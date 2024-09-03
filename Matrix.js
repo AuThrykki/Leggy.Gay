@@ -10,7 +10,7 @@ c.width = window.innerWidth;
 var matrix = `良犬狗狼鳥狸麒麟龍好龍忠義言語西洋真実神様願任友達何処故新世界勝絶対あいうえおかきくけこまみむめもなにぬねのたちつてとさしすせそらりるれろはひふへほアイウエオかきくけこマミムメモナニヌネノタチツテトサシスセソラリルレロハヒフヘホ                                       `;
 matrix = matrix.split("");
 
-var font_size = 20;
+var font_size = 15;
 var columns = c.width/font_size; //number of columns for the rain
 //an array of drops - one per column
 var drops = [];
@@ -34,14 +34,14 @@ function draw()
     for(var i = 0; i < drops.length; i++)
     {
         var random = Math.random();
-        if (random <= 0.02) {
+        if (random <= 0.005) {
             ctx.fillStyle = "rgba(253, 74, 68)"
         }
 
-        var random = Math.random();
-        if (random <= 0.00) {
-            ctx.fillStyle = "rgba(238, 63, 1)"
-        }
+        // var random = Math.random();
+        // if (random <= 0.03) {
+        //     ctx.fillStyle = "rgba(238, 63, 1)"
+        // }
      
         //a random chinese character to print
         var text = matrix[Math.floor(Math.random()*matrix.length)];
