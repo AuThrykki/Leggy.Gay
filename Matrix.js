@@ -4,13 +4,13 @@ var ctx = c.getContext("2d");
 
 //making the canvas full screen
 c.height = window.innerHeight;
-c.width = window.innerWidth*0.6;
+c.width = window.innerWidth;
 
 //chinese characters - taken from the unicode charset//converting the string into an array of single characters
 var matrix = `良犬狗狼鳥狸麒麟龍好龍忠義言語西洋真実神様願任友達何処故新世界勝絶対あいうえおかきくけこまみむめもなにぬねのたちつてとさしすせそらりるれろはひふへほアイウエオかきくけこマミムメモナニヌネノタチツテトサシスセソラリルレロハヒフヘホ                                       `;
 matrix = matrix.split("");
 
-var font_size = 19;
+var font_size = 20;
 var columns = c.width/font_size; //number of columns for the rain
 //an array of drops - one per column
 var drops = [];
@@ -28,14 +28,14 @@ function draw()
     ctx.fillRect(0, 0, c.width, c.height);
 
 
-    ctx.fillStyle = "rgb(89, 156, 152)";//green text
+    ctx.fillStyle = "rgb(89, 156, 252)";//green text
     ctx.font = font_size + "px arial";
     //looping over drops
     for(var i = 0; i < drops.length; i++)
     {
         var random = Math.random();
-        if (random <= 0.002) {
-            ctx.fillStyle = "rgba(253, 34, 118)"
+        if (random <= 0.02) {
+            ctx.fillStyle = "rgba(253, 74, 68)"
         }
 
         var random = Math.random();
