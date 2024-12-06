@@ -263,3 +263,7 @@ a {
   max-height: 15em;
   max-width: 100%;
 }
+
+.attribution {
+  font-size: 0.8em;
+}
